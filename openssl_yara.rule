@@ -7,7 +7,6 @@ rule Vulnerable_Linux_OpenSSL {
     strings:
         $ver = { 4F 70 65 6E 53 53 4C 20 33 2E 30 2E (30|31|32|33|34|35|36) } 
         $str1 = "SSLv3"
-        $str2 = "openssl.org"
     condition:
         $ver and
         (all of ($str*)) and
