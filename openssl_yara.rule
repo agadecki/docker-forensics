@@ -1,8 +1,31 @@
 import "elf"
+import "pe"
+
+
+rule Vulnerable_Win_OpenSSL {
+    meta:
+        description = "Detects vulnerable version of OpenSSL Windows binary (3.x and up)"
+        author = "mmuir@cadosecurity.com"
+        date = "2022-10-31"
+        reference = "https://www.zdnet.com/article/openssl-warns-of-critical-security-vulnerability-with-upcoming-patch/"
+        license = "Apache License 2.0"
+    strings:
+        $ver = { 4F 70 65 6E 53 53 4C 20 33 2E 30 2E (30|31|32|33|34|35|36) }        
+        $str1 = "SSLv3"
+    condition:
+        $ver and
+        (all of ($str*)) and
+        pe.imports("bcrypt.dll") and 
+        pe.imports("WS2_32.dll") and
+        filesize < 5MB        
+}
 
 rule Vulnerable_Linux_OpenSSL {
     meta:
-        description = "Detects vulnerable version of OpenSSL Linux library (3.0.0 and up to 3.0.6)"
+        description = "Detects vulnerable version of OpenSSL Linux binary (3.x and up)"
+        author = "mmuir@cadosecurity.com"
+        date = "2022-10-31"
+        reference = "https://www.zdnet.com/article/openssl-warns-of-critical-security-vulnerability-with-upcoming-patch/"
         license = "Apache License 2.0"
     strings:
         $ver = { 4F 70 65 6E 53 53 4C 20 33 2E 30 2E (30|31|32|33|34|35|36) } 
@@ -13,3 +36,4 @@ rule Vulnerable_Linux_OpenSSL {
         elf.type == elf.ET_DYN and
         filesize < 30MB        
 }
+
