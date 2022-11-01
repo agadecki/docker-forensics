@@ -4,7 +4,7 @@ import "pe"
 
 rule Vulnerable_Win_OpenSSL {
     meta:
-        description = "Detects vulnerable version of OpenSSL Windows binary (3.x and up)"
+        description = "Detects vulnerable version of OpenSSL Windows binary (3.0.0 and up to 3.0.6)"
         author = "mmuir@cadosecurity.com"
         date = "2022-10-31"
         reference = "https://www.zdnet.com/article/openssl-warns-of-critical-security-vulnerability-with-upcoming-patch/"
@@ -22,7 +22,7 @@ rule Vulnerable_Win_OpenSSL {
 
 rule Vulnerable_Linux_OpenSSL {
     meta:
-        description = "Detects vulnerable version of OpenSSL Linux binary (3.x and up)"
+        description = "Detects vulnerable version of OpenSSL Linux binary (3.0.0 and up to 3.0.6)"
         author = "mmuir@cadosecurity.com"
         date = "2022-10-31"
         reference = "https://www.zdnet.com/article/openssl-warns-of-critical-security-vulnerability-with-upcoming-patch/"
